@@ -1,22 +1,10 @@
-import { Fraunces, Poppins, Geist_Mono } from "next/font/google";
+import { Abel } from "next/font/google";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const abel = Abel({
+  weight: "400",
   subsets: ["latin"],
-  style: ["italic", "normal"],
-  weight: ["400", "500", "600"],
-  variable: "--font-serif",
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-sans",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-abel",
 });
 
 export const metadata = {
@@ -26,11 +14,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${fraunces.variable} ${poppins.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+    <html lang="en" className={`${abel.variable} h-full antialiased`}>
+      <head>
+        <link
+          href="https://fonts.cdnfonts.com/css/futura-pt"
+          rel="stylesheet"
+        />
+      </head>
+      <body className="min-h-full flex flex-col font-body bg-white text-black">
+        {children}
+      </body>
     </html>
   );
 }

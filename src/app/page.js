@@ -1,5 +1,4 @@
 import Navbar from "./components/sections/Navbar";
-import Hero from "./components/sections/Hero";
 import SubHero from "./components/sections/SubHero";
 import Services from "./components/sections/Services";
 import Campaign from "./components/sections/Campaign";
@@ -8,15 +7,18 @@ import Footer from "./components/sections/Footer";
 import Projects from "./components/sections/Projects";
 import Videos from "./components/sections/Videos";
 import Contact from "./components/sections/Contact";
+import Galary from "./components/sections/Galary";
+import VideoHero from "./components/sections/VideoHero";
 
 export default function Home() {
   return (
     <div className="">
       <Navbar />
-      <Hero />
+      <VideoHero />
       <SubHero />
+      <Galary />
       <Projects />
-      <Videos />
+      {/* <Videos /> */}
       <Services />
       <Campaign />
       <About />

@@ -1,37 +1,39 @@
-import React from "react";
+"use client";
+
+import { useRef } from "react";
+import { useScrollReveal } from "@/app/hooks/useGsapAnimations";
 
 const SubHero = () => {
-  return (
-    <section className="relative w-full px-6 md:px-20 py-32 md:py-56 overflow-hidden">
-      <span className="font-serif text-gray-300 leading-snug max-w-sm absolute top-15 right-20 text-[2rem] md:text-lg select-none pointer-events-none -z-10">
-        We don't just design for brands we build the language they speak in.
-        From a single logo mark to a full campaign rollout, every project starts
-        with one question: what does this brand want people to feel?
-        Royalerchhobi exists to answer that, one idea at a time.
-      </span>
+  const sectionRef = useRef(null);
 
-      <div className="relative text-center z-10 ">
-        <h2 className="font-serif text-6xl md:text-8xl lg:text-9xl leading-[0.95] tracking-tight text-black">
-          Where ideas <br />
-          <span className="text-[#EDB731]">take shape</span>
+  useScrollReveal(sectionRef, ".reveal", {
+    mobileY: 24,
+    desktopY: 56,
+    stagger: 0.14,
+    duration: 1,
+  });
+
+  return (
+    <section
+      ref={sectionRef}
+      className="w-full px-4 sm:px-6 md:px-16 lg:px-20 py-20 sm:py-28 md:py-36 bg-white"
+    >
+      <div className="max-w-6xl">
+        <p className="reveal font-body text-[10px] sm:text-[11px] uppercase tracking-[0.35em] sm:tracking-[0.4em] text-black/35 mb-8 sm:mb-10">
+          Creative agency — Dhaka
+        </p>
+
+        <h2 className="font-display text-[clamp(2.75rem,10vw,8rem)] uppercase leading-[0.88] tracking-tight text-black">
+          <span className="reveal block">Where ideas</span>
+          <span className="reveal block text-accent">take shape</span>
         </h2>
+
+        <p className="reveal font-body mt-8 sm:mt-10 md:mt-12 text-base sm:text-lg md:text-xl text-black/50 tracking-wide max-w-md leading-relaxed">
+          Say less.{" "}
+          <span className="text-black">Mean more.</span>{" "}
+          We chase clarity over noise — building brands that don&apos;t need to shout to be remembered.
+        </p>
       </div>
-      <span className="font-serif text-gray-300 leading-snug max-w-sm absolute top-25 left-20 text-[2rem] md:text-lg select-none pointer-events-none -z-10">
-        Some studios chase trends. We chase clarity. Royalerchhobi began with a
-        simple frustration too much noise, not enough meaning. Every billboard
-        shouting, every feed scrolling, every brand trying to say everything at
-        once. We wanted to do the opposite: say less, mean more. That idea
-        shapes everything we make. A logo isn't just a mark it's a single
-        thought, distilled until nothing unnecessary remains. A campaign isn't a
-        wall of messages it's one idea, repeated with intention. Even our
-        process reflects this: fewer revisions, sharper questions, work that
-        earns its place rather than fills space. Founded by Mominur Rahman Royal
-        a designer, art thinker, and someone who has never been afraid to stand
-        quietly for something he believes in — the studio carries that same
-        instinct into client work. Restraint isn't a limitation here. It's the
-        whole point. We design for brands that don't need to shout to be
-        remembered. If that sounds like you, we should talk.
-      </span>
     </section>
   );
 };

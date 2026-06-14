@@ -1,10 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useScrollReveal } from "@/app/hooks/useGsapAnimations";
 
 const Contact = () => {
+  const sectionRef = useRef(null);
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("idle");
+
+  useScrollReveal(sectionRef, ".contact-heading", {
+    mobileY: 24,
+    desktopY: 48,
+    duration: 0.9,
+  });
+
+  useScrollReveal(sectionRef, ".contact-field", {
+    mobileY: 20,
+    desktopY: 32,
+    stagger: 0.1,
+    duration: 0.7,
+    start: "top 88%",
+  });
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -24,17 +40,21 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="px-6 py-24 md:px-20">
-      <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-20 md:items-start">
+    <section
+      id="contact"
+      ref={sectionRef}
+      className="px-4 sm:px-6 py-20 sm:py-24 md:px-20"
+    >
+      <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 md:gap-20 md:items-start">
         <div className="flex flex-col gap-6">
-          <h2 className="font-serif text-4xl font-bold text-black md:text-6xl lg:text-7xl leading-none">
-            Let's talk
+          <h2 className="contact-heading font-display text-[clamp(2.5rem,6vw,4.5rem)] md:text-6xl lg:text-7xl uppercase leading-none tracking-tight text-black">
+            Let&apos;s talk
           </h2>
         </div>
 
-        <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-1">
-            <label className="text-xs tracking-widest uppercase text-black/40">
+        <div className="flex flex-col gap-5 sm:gap-6">
+          <div className="contact-field flex flex-col gap-1">
+            <label className="text-[10px] sm:text-xs tracking-widest uppercase text-black/40">
               Name
             </label>
             <input
@@ -42,12 +62,12 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="Your name"
-              className="border-b border-black/20 bg-transparent py-3 text-black placeholder:text-black/25 outline-none focus:border-black transition-colors"
+              className="border-b border-black/20 bg-transparent py-2.5 sm:py-3 text-sm sm:text-base text-black placeholder:text-black/25 outline-none focus:border-black transition-colors"
             />
           </div>
 
-          <div className="flex flex-col gap-1">
-            <label className="text-xs tracking-widest uppercase text-black/40">
+          <div className="contact-field flex flex-col gap-1">
+            <label className="text-[10px] sm:text-xs tracking-widest uppercase text-black/40">
               Email
             </label>
             <input
@@ -56,12 +76,12 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="your@email.com"
-              className="border-b border-black/20 bg-transparent py-3 text-black placeholder:text-black/25 outline-none focus:border-black transition-colors"
+              className="border-b border-black/20 bg-transparent py-2.5 sm:py-3 text-sm sm:text-base text-black placeholder:text-black/25 outline-none focus:border-black transition-colors"
             />
           </div>
 
-          <div className="flex flex-col gap-1">
-            <label className="text-xs tracking-widest uppercase text-black/40">
+          <div className="contact-field flex flex-col gap-1">
+            <label className="text-[10px] sm:text-xs tracking-widest uppercase text-black/40">
               Message
             </label>
             <textarea
@@ -70,21 +90,21 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="Tell us about your project..."
               rows={4}
-              className="border-b border-black/20 bg-transparent py-3 text-black placeholder:text-black/25 outline-none focus:border-black transition-colors resize-none"
+              className="border-b border-black/20 bg-transparent py-2.5 sm:py-3 text-sm sm:text-base text-black placeholder:text-black/25 outline-none focus:border-black transition-colors resize-none"
             />
           </div>
 
           <button
             onClick={handleSubmit}
             disabled={status === "loading"}
-            className="mt-4 self-start bg-black text-white px-8 py-3 rounded-full text-sm font-medium transition-all hover:bg-yellow-400 hover:text-black disabled:opacity-40"
+            className="contact-field mt-2 sm:mt-4 self-start bg-black text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm font-body font-medium transition-all hover:bg-accent hover:text-black disabled:opacity-40"
           >
             {status === "loading" ? "Sending..." : "Send message"}
           </button>
 
           {status === "success" && (
             <p className="text-sm text-green-600">
-              Message sent — we'll be in touch soon.
+              Message sent — we&apos;ll be in touch soon.
             </p>
           )}
           {status === "error" && (
