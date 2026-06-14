@@ -13,26 +13,41 @@ const services = [
     title: "Branding & Identity",
     description:
       "Logos, visual identity systems, typography, and brand guidelines — a complete identity built to make your business unforgettable.",
+    titleAlign: "text-left",
+    descAlign: "text-left ml-0 max-w-md",
+    offset: "pl-0",
   },
   {
     title: "Web Design & Development",
     description:
       "Fast, modern websites — from one-page brand sites to full custom builds — designed to convert visitors into clients.",
+    titleAlign: "text-center",
+    descAlign: "text-center mx-auto max-w-lg",
+    offset: "px-4 sm:px-8",
   },
   {
     title: "Ad Creatives & Campaigns",
     description:
       "Static and dynamic ad campaigns, social strategy, and content calendars across every platform — designed to stop the scroll.",
+    titleAlign: "text-right",
+    descAlign: "text-right ml-auto max-w-md",
+    offset: "pr-0",
   },
   {
     title: "Packaging Design",
     description:
       "Shelf-ready packaging that captures attention and tells your product's story at a glance.",
+    titleAlign: "text-left",
+    descAlign: "text-left max-w-sm",
+    offset: "pl-[8%] sm:pl-[14%] md:pl-[18%]",
   },
   {
     title: "Film, Video & Photography",
     description:
       "TVC and OVC production alongside conceptual photo art — visual storytelling from concept to final cut.",
+    titleAlign: "text-right",
+    descAlign: "text-right max-w-lg",
+    offset: "pr-[6%] sm:pr-[12%] md:pr-[22%] ml-auto",
   },
 ];
 
@@ -54,34 +69,33 @@ const Services = () => {
         "(prefers-reduced-motion: reduce)"
       ).matches;
 
-      const rows = gsap.utils.toArray(
-        sectionRef.current.querySelectorAll(".service-row")
+      const cards = gsap.utils.toArray(
+        sectionRef.current.querySelectorAll(".service-card")
       );
 
-      rows.forEach((row) => {
-        const title = row.querySelector(".service-title");
-        const desc = row.querySelector(".service-desc");
+      cards.forEach((card) => {
+        const title = card.querySelector(".service-title");
+        const desc = card.querySelector(".service-desc");
 
         if (reducedMotion) {
-          gsap.set([title, desc], { opacity: 1, x: 0 });
+          gsap.set([title, desc], { opacity: 1, y: 0 });
           return;
         }
 
-        gsap.set(title, { opacity: 0, x: -30 });
-        gsap.set(desc, { opacity: 0, x: 30 });
+        gsap.set([title, desc], { opacity: 0, y: 36 });
 
         gsap
           .timeline({
             scrollTrigger: {
-              trigger: row,
+              trigger: card,
               start: "top 88%",
               toggleActions: "play none none none",
             },
           })
-          .to(title, { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" })
+          .to(title, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" })
           .to(
             desc,
-            { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" },
+            { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
             "-=0.5"
           );
       });
@@ -95,10 +109,7 @@ const Services = () => {
       ref={sectionRef}
       className="bg-white px-4 sm:px-6 py-20 sm:py-28 md:px-16 lg:px-20 md:py-36"
     >
-      <div className="services-intro mb-14 sm:mb-16 md:mb-20 max-w-4xl">
-        <p className="font-body text-[10px] sm:text-[11px] uppercase tracking-[0.4em] text-black/35 mb-4 sm:mb-6 font-bold">
-          What we do
-        </p>
+      <div className="services-intro mb-14 sm:mb-16 md:mb-24 max-w-4xl">
         <h2 className="font-display text-[clamp(3rem,9vw,7.5rem)] uppercase leading-[0.88] tracking-tight text-black">
           Services
         </h2>
@@ -108,16 +119,20 @@ const Services = () => {
         </p>
       </div>
 
-      <div className="divide-y divide-black/8">
+      <div className="flex flex-col gap-4 sm:gap-6">
         {services.map((service) => (
           <div
             key={service.title}
-            className="service-row grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-[1fr_1.15fr] md:gap-16 py-10 sm:py-12 md:py-14 items-start"
+            className={`service-card relative py-14 sm:py-16 md:py-20 border-b border-black/6 last:border-b-0 ${service.offset}`}
           >
-            <h3 className="service-title font-display text-[clamp(1.5rem,3.5vw,2.75rem)] uppercase leading-[0.95] tracking-tight text-black">
+            <h3
+              className={`service-title font-display text-[clamp(1.75rem,4.5vw,3.5rem)] uppercase leading-[0.92] tracking-tight text-black ${service.titleAlign}`}
+            >
               {service.title}
             </h3>
-            <p className="service-desc font-body text-sm sm:text-base leading-relaxed text-black/50 max-w-lg md:pt-1">
+            <p
+              className={`service-desc font-body mt-5 sm:mt-6 text-sm sm:text-base leading-relaxed text-black/50 ${service.descAlign}`}
+            >
               {service.description}
             </p>
           </div>

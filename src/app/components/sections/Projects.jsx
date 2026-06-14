@@ -12,6 +12,16 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     year: "2025",
+    category: "Store Opening",
+    disciplines: ["Launch Campaign", "Visual Identity", "On-ground Creative"],
+    image: "/assest/project_1.jpeg",
+    alt: "Aarong Dhanmondi Opening",
+    title: "Aarong Dhanmondi",
+    description:
+      "The world's largest craft store — now in Dhanmondi. Launch campaign for Aarong's new branch opening at 23, Road 2, March 7, 2025.",
+  },
+  {
+    year: "2025",
     category: "Retail Campaign",
     disciplines: ["Brand Identity", "Ambient Design", "Visual Direction"],
     image: "/assest/porject_5.jpg",
@@ -32,6 +42,16 @@ const projects = [
   },
   {
     year: "2024",
+    category: "Product Campaign",
+    disciplines: ["Packaging", "Visual Design", "Brand Communication"],
+    image: "/assest/porject_3.jpg",
+    alt: "Bashundhara Tissue",
+    title: "Bashundhara Tissue",
+    description:
+      "Visual identity and campaign creatives for Bashundhara Tissue — clean, confident design built for shelf presence and everyday trust.",
+  },
+  {
+    year: "2024",
     category: "Festival Branding",
     disciplines: ["Festival Visuals", "Social Creative", "Brand Design"],
     image: "/assest/porject_2.jpg",
@@ -45,10 +65,9 @@ const projects = [
 const Projects = () => {
   const sectionRef = useRef(null);
 
-  useScrollReveal(sectionRef, ".work-header > *", {
+  useScrollReveal(sectionRef, ".work-header", {
     mobileY: 20,
     desktopY: 40,
-    stagger: 0.12,
     duration: 0.8,
   });
 
@@ -113,11 +132,8 @@ const Projects = () => {
       className="px-4 sm:px-6 py-20 sm:py-28 md:px-16 lg:px-20 md:py-36 bg-white"
     >
       <div className="work-header mb-16 sm:mb-20 md:mb-28 pb-8 sm:pb-10">
-        <p className="font-body text-[10px] sm:text-[11px] uppercase tracking-[0.4em] text-black/35 mb-4 sm:mb-6 font-bold">
-          Selected work
-        </p>
         <h2 className="font-display text-[clamp(3rem,9vw,7.5rem)] uppercase leading-[0.88] tracking-tight text-black">
-          Projects
+          Created Crafts
         </h2>
       </div>
 

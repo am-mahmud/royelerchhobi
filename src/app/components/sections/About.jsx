@@ -113,9 +113,6 @@ const About = () => {
     >
       <div className="about-intro grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20 mb-20 sm:mb-24 md:mb-32 pb-16 sm:pb-20">
         <div>
-          <p className="font-body text-[10px] sm:text-[11px] uppercase tracking-[0.4em] text-black/35 mb-4 sm:mb-6 font-bold">
-            About us
-          </p>
           <h2 className="font-display text-[clamp(3rem,9vw,7.5rem)] uppercase leading-[0.88] tracking-tight text-black">
             The people behind the work
           </h2>

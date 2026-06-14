@@ -8,6 +8,7 @@ import Projects from "./components/sections/Projects";
 import Videos from "./components/sections/Videos";
 import Contact from "./components/sections/Contact";
 import Galary from "./components/sections/Galary";
+import Brands from "./components/sections/Brands";
 import VideoHero from "./components/sections/VideoHero";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <SubHero />
       <Galary />
       <Projects />
+      <Brands />
       {/* <Videos /> */}
       <Services />
       <Campaign />

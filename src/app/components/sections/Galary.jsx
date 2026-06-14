@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Observer } from "gsap/Observer";
+import { useScrollReveal } from "@/app/hooks/useGsapAnimations";
 import heroPhotos from "@/app/lib/heroPhotos";
 import Image from "next/image";
 
@@ -28,6 +29,12 @@ const Galary = () => {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
   const innerRef = useRef(null);
+
+  useScrollReveal(sectionRef, ".gallery-title", {
+    mobileY: 20,
+    desktopY: 36,
+    duration: 0.8,
+  });
 
   useGSAP(
     () => {
@@ -112,15 +119,9 @@ const Galary = () => {
       ref={sectionRef}
       className="relative w-full overflow-hidden bg-white py-16 sm:py-24 md:py-28"
     >
-      <div className="mb-8 sm:mb-12 flex items-center justify-between px-4 sm:px-6 md:px-16 lg:px-20">
-        <p className="font-body text-[10px] sm:text-[11px] uppercase tracking-[0.4em] text-black/35 font-bold">
-          Gallery
-        </p>
-        <span className="hidden sm:inline-flex items-center gap-2 rounded-full bg-black px-5 py-2.5 font-body text-[10px] uppercase tracking-[0.2em] text-white font-bold">
-          Drag or scroll
-          <span aria-hidden>→</span>
-        </span>
-      </div>
+      <h2 className="gallery-title font-display text-center text-[clamp(2rem,6vw,4.5rem)] uppercase leading-[0.92] tracking-tight text-black mb-12 sm:mb-16 md:mb-20 px-4">
+        A Fair of Living Art
+      </h2>
 
       <div
         ref={trackRef}
