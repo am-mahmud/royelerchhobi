@@ -101,15 +101,23 @@ const VideoHero = () => {
         </div>
       )}
 
-      <iframe
-        ref={iframeRef}
-        key={active.id}
-        src={`https://www.youtube.com/embed/${active.id}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3`}
-        allow="autoplay; encrypted-media; picture-in-picture"
-        allowFullScreen
-        title={active.title}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[calc(100vw+120px)] h-[calc(100svh+120px)] sm:w-[calc(100vw+160px)] sm:h-[calc(100svh+160px)] md:w-[calc(100vw+200px)] md:h-[calc(100svh+200px)] pointer-events-none border-0"
-      />
+      <div className="absolute inset-0 overflow-hidden">
+        <iframe
+          ref={iframeRef}
+          key={active.id}
+          src={`https://www.youtube.com/embed/${active.id}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3`}
+          allow="autoplay; encrypted-media; picture-in-picture"
+          allowFullScreen
+          title={active.title}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-0 pointer-events-none scale-[1.18] sm:scale-[1.22] md:scale-[1.25]"
+          style={{
+            width: "100vw",
+            height: "56.25vw",
+            minHeight: "100svh",
+            minWidth: "177.78svh",
+          }}
+        />
+      </div>
 
       <div className="hero-dot absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-20 flex max-w-[90vw] items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar px-2">
         {videos.map((video, i) => (
