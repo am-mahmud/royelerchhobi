@@ -129,9 +129,9 @@ const Projects = () => {
     <section
       id="work"
       ref={sectionRef}
-      className="px-4 sm:px-6 py-20 sm:py-28 md:px-16 lg:px-20 md:py-36 bg-white"
+      className="px-4 sm:px-10 py-14 sm:py-18 md:px-20 md:py-24 bg-white"
     >
-      <div className="work-header mb-16 sm:mb-20 md:mb-28 pb-8 sm:pb-10">
+      <div className="work-header mb-16 sm:mb-20 md:mb-20 pb-8 sm:pb-10">
         <h2 className="font-display text-[clamp(3rem,9vw,7.5rem)] uppercase leading-[0.88] tracking-tight text-black">
           Created Crafts
         </h2>
@@ -169,17 +169,17 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                <p className="font-body text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-black/35 font-bold">
+                {/* <p className="font-body text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-black/35 font-bold">
                   {project.disciplines.join(" · ")}
-                </p>
+                </p> */}
               </div>
 
               <div
-                className={`project-image relative flex items-center justify-center min-h-[260px] sm:min-h-[360px] md:min-h-[460px] ${
+                className={`project-image relative flex items-center justify-center min-h-65 sm:min-h-90 md:min-h-115 ${
                   isReversed ? "lg:order-1" : "lg:order-2"
                 }`}
               >
-                <div className="relative w-full h-[260px] sm:h-[360px] md:h-[460px]">
+                <div className="relative w-full h-65 sm:h-90 md:h-115">
                   <Image
                     src={project.image}
                     alt={project.alt}

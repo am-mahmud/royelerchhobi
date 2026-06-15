@@ -32,7 +32,7 @@ const Campaign = () => {
         aria-hidden
         className="campaign-watermark font-display pointer-events-none absolute -top-2 sm:-top-4 right-0 select-none text-[clamp(3rem,16vw,14rem)] uppercase leading-none tracking-tighter text-white/4"
       >
-        Sound
+        Sound Pollution
       </p>
 
       <div className="relative z-10 mx-auto max-w-6xl">
@@ -43,7 +43,7 @@ const Campaign = () => {
         </h2>
 
         <div className="grid grid-cols-1 items-start gap-10 sm:gap-12 md:grid-cols-2 md:gap-16">
-          <div className="campaign-image relative mx-auto md:mx-0 aspect-[4/5] w-full max-w-xs sm:max-w-sm md:max-w-md overflow-hidden rounded-sm">
+          <div className="campaign-image relative mx-auto md:mx-0 aspect-4/5 w-full max-w-xs sm:max-w-sm md:max-w-md overflow-hidden rounded-sm">
             <Image
               src="/assest/campaign-1.jpeg"
               alt="City of Sound campaign"
@@ -60,7 +60,7 @@ const Campaign = () => {
 
             <p className="campaign-reveal font-body text-sm sm:text-base leading-relaxed text-white/55 md:text-lg">
               On weekends, Mominur Rahman Royal stands at a busy Dhaka
-              intersection holding a yellow placard — a silent protest against a
+              intersection holding a yellow placard a silent protest against a
               city where horns can roar as loud as a rock concert. His message is
               simple: only an idiot honks without reason.
             </p>
@@ -68,7 +68,7 @@ const Campaign = () => {
             <p className="campaign-reveal font-body text-sm sm:text-base leading-relaxed text-white/45">
               For years, this one-man crusade has drawn strangers off the street to
               stand beside him in quiet solidarity. Photos of his protest have been
-              shared thousands of times — a small sign of change in one of the
+              shared thousands of times a small sign of change in one of the
               world&apos;s noisiest cities, where peak-hour honking can hit 110
               decibels and hearing loss has become a public health concern.
             </p>
@@ -79,7 +79,7 @@ const Campaign = () => {
               designed. It&apos;s one we live.
             </p>
 
-            <p className="campaign-reveal font-body text-[10px] sm:text-xs uppercase tracking-[0.2em] text-white/30">
+            {/* <p className="campaign-reveal font-body text-[10px] sm:text-xs uppercase tracking-[0.2em] text-white/30">
               Story reported by AFP ·{" "}
               <a
                 href="https://en.prothomalo.com/bangladesh/Silent-protest-against-loud-horns-sparks-noisy"
@@ -89,7 +89,7 @@ const Campaign = () => {
               >
                 Prothom Alo
               </a>
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

@@ -26,9 +26,9 @@ const Navbar = () => {
         <Image
           src="/assest/logo.png"
           alt="Logo"
-          width={40}
-          height={40}
-          className="nav-item object-contain w-8 h-8 sm:w-10 sm:h-10"
+          width={60}
+          height={60}
+          className="nav-item object-contain md:w-16 md:h-16 sm:w-10 sm:h-10"
         />
 
         <nav className="hidden md:flex gap-6 lg:gap-10">
@@ -36,7 +36,7 @@ const Navbar = () => {
             <a
               key={item.id}
               href={item.link}
-              className="nav-item font-body text-accent hover:opacity-70 transition-opacity text-xs lg:text-sm uppercase tracking-[0.18em] font-bold"
+              className="nav-item font-body text-accent hover:opacity-70 transition-opacity text-xs lg:text-sm uppercase tracking-[0.18em]"
             >
               {item.title}
             </a>

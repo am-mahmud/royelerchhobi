@@ -98,8 +98,8 @@ const Brands = () => {
       </div>
 
       <div className="relative">
-        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 sm:w-24 bg-gradient-to-r from-white to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 sm:w-24 bg-gradient-to-l from-white to-transparent" />
+        <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 sm:w-24 bg-linear-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 sm:w-24 bg-linear-to-l from-white to-transparent" />
 
         <div ref={trackRef} className="flex w-max items-center gap-12 sm:gap-16 md:gap-24 px-6 sm:px-10">
           {marqueeBrands.map((brand, i) => (

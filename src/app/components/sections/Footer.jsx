@@ -2,18 +2,24 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube, FaLinkedin, FaBehance  } from "react-icons/fa";
 import { useScrollReveal } from "@/app/hooks/useGsapAnimations";
 
 const socialLinks = [
   {
+    icon: FaBehance,
+    href: "https://www.behance.net/royalerchhobi/moodboards",
+    label: "Behance",
+  },
+
+  {
     icon: FaFacebook,
-    href: "https://facebook.com/royalerchhobi",
+    href: "https://www.facebook.com/royalscomm",
     label: "Facebook",
   },
   {
     icon: FaInstagram,
-    href: "https://instagram.com/royalerchhobi",
+    href: "https://www.instagram.com/royalerchhobi_com",
     label: "Instagram",
   },
   {
@@ -21,7 +27,7 @@ const socialLinks = [
     href: "https://www.youtube.com/channel/UC_v1UPT8P3y7hXNeXVS17qA",
     label: "YouTube",
   },
-  { icon: FaLinkedin, href: "https://linkedin.com", label: "LinkedIn" },
+  { icon: FaLinkedin, href: "https://www.linkedin.com/in/royalerchhobi-communications-1b70492b3", label: "LinkedIn" },
 ];
 
 const Footer = () => {
@@ -46,9 +52,9 @@ const Footer = () => {
             Royalerchhobi Communications
           </h3>
           <p className="leading-relaxed">
-            House 27, Road 2, Block B, Niketan,
+            House 5, Road 119
             <br />
-            Gulshan 01, Dhaka 1212, Bangladesh
+            Mohakhali DOHS, Dhaka 1212, Bangladesh
           </p>
           <p>+880 1954 468837</p>
           <p className="break-all sm:break-normal">

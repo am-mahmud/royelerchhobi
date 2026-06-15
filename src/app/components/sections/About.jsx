@@ -109,9 +109,9 @@ const About = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="px-4 sm:px-6 py-20 sm:py-28 md:px-16 lg:px-20 md:py-36 bg-white"
+      className="px-6 sm:px-10 py-14 sm:py-16 md:px-20 md:py-20 bg-white"
     >
-      <div className="about-intro grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20 mb-20 sm:mb-24 md:mb-32 pb-16 sm:pb-20">
+      <div className="about-intro grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20 mb-14 sm:mb-16 md:mb-20 pb-14 sm:pb-16">
         <div>
           <h2 className="font-display text-[clamp(3rem,9vw,7.5rem)] uppercase leading-[0.88] tracking-tight text-black">
             The people behind the work
@@ -120,13 +120,13 @@ const About = () => {
 
         <div className="flex flex-col justify-end gap-6">
           <p className="font-body text-sm sm:text-base md:text-lg leading-relaxed text-black/55">
-            We don&apos;t just design for brands — we build the language they
+            We don&apos;t just design for brands we build the language they
             speak in. From a single logo mark to a full campaign rollout, every
             project starts with one question: what does this brand want people
             to feel?
           </p>
           <p className="font-body text-sm sm:text-base leading-relaxed text-black/40">
-            Founded in Dhaka by Mominur Rahman Royal — a designer and art
+            Founded in Dhaka by Mominur Rahman Royal a designer and art
             thinker who believes restraint isn&apos;t a limitation, it&apos;s the
             whole point. Small team. Sharp ideas. Work that earns its place.
           </p>
@@ -136,8 +136,8 @@ const About = () => {
       <div className="grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 lg:gap-16">
         {team.map((member) => (
           <div key={member.name} className="team-member group">
-            <div className="team-photo-wrap relative mb-6 sm:mb-8 flex items-end justify-center min-h-[300px] sm:min-h-[380px] md:min-h-[420px]">
-              <div className="relative w-full h-[280px] sm:h-[340px] md:h-[400px]">
+            <div className="team-photo-wrap relative mb-6 sm:mb-8 flex items-end justify-center min-h-75 sm:min-h-95 md:min-h-105">
+              <div className="relative w-full h-70 sm:h-85 md:h-100">
                 <Image
                   src={member.image}
                   alt={member.name}

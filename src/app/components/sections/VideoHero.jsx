@@ -46,7 +46,7 @@ const VideoHero = () => {
   return (
     <div
       ref={heroRef}
-      className="relative h-[100svh] min-h-[480px] w-full overflow-hidden bg-black"
+      className="relative h-svh min-h-120 w-full overflow-hidden bg-black"
     >
       <iframe
         ref={iframeRef}
