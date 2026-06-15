@@ -7,7 +7,7 @@ import Footer from "./components/sections/Footer";
 import Projects from "./components/sections/Projects";
 import Videos from "./components/sections/Videos";
 import Contact from "./components/sections/Contact";
-import Galary from "./components/sections/Galary";
+import Gallery from "./components/sections/Gallery";
 import Brands from "./components/sections/Brands";
 import VideoHero from "./components/sections/VideoHero";
 
@@ -17,7 +17,7 @@ export default function Home() {
       <Navbar />
       <VideoHero />
       <SubHero />
-      <Galary />
+      <Gallery />
       <Projects />
       <Brands />
       {/* <Videos /> */}
