@@ -10,6 +10,9 @@ const abel = Abel({
 export const metadata = {
   title: "Royalerchhobi",
   description: "A creative shop for advertising & communication.",
+  icons: {
+    icon: "/assest/logo.png"
+  }
 };
 
 export default function RootLayout({ children }) {
