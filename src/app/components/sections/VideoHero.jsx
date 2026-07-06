@@ -169,7 +169,7 @@
 
 // Hero Two 
 
-// "use client";
+"use client";
 
 // import { useEffect, useState, useRef, useCallback } from "react";
 // import gsap from "gsap";
@@ -483,6 +483,8 @@
 
 // export default VideoHero;
 
+
+
 "use client";
 
 import { useRef, useState, useEffect } from "react";
@@ -547,24 +549,25 @@ const VideoHero = () => {
       ref={heroRef}
       className="relative h-[60svh] min-h-80 sm:h-svh sm:min-h-120 w-full overflow-hidden bg-black"
     >
-      {!loaded && (
-        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black">
-          <p className="font-body text-xs uppercase tracking-[0.3em] text-white/40">
-            Loading...
+      {/* {!loaded && (
+        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-10 flex items-center gap-2">
+          <span className="h-1.5 w-1.5 rounded-full bg-white/50 animate-pulse" />
+          <p className="font-body text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white/50">
+            Loading video...
           </p>
         </div>
-      )}
+      )} */}
 
       <div className="absolute inset-0 overflow-hidden">
         <video
           ref={videoRef}
           src={VIDEO_SRC}
+          fetchPriority="high"
           muted
           loop
           playsInline
           autoPlay
           preload="auto"
-          poster="/assest/royal-hero-poster.jpg"
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-0 pointer-events-none opacity-0"
           style={FILL_STYLE}
         />
@@ -593,3 +596,4 @@ const VideoHero = () => {
 };
 
 export default VideoHero;
+

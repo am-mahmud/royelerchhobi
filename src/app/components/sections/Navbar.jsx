@@ -96,7 +96,7 @@ const Navbar = () => {
                 key={item.id}
                 href={item.link}
                 onClick={closeMenu}
-                className="text-black hover:opacity-70 transition-opacity font-body text-sm uppercase tracking-[0.15em] py-2"
+                className="text-accent hover:opacity-70 transition-opacity font-body text-sm uppercase tracking-[0.15em] py-2"
               >
                 {item.title}
               </a>

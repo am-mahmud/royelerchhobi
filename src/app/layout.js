@@ -48,6 +48,13 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${abel.variable} h-full antialiased`}>
       <head>
         <link
+          rel="preload"
+          as="video"
+          href="/assest/royal-hero-video.mp4"
+          type="video/mp4"
+          fetchPriority="high"
+        />
+        <link
           href="https://fonts.cdnfonts.com/css/futura-pt"
           rel="stylesheet"
         />
