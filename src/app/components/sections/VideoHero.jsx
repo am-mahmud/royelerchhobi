@@ -549,15 +549,7 @@ const VideoHero = () => {
       ref={heroRef}
       className="relative h-[60svh] min-h-80 sm:h-svh sm:min-h-120 w-full overflow-hidden bg-black"
     >
-      {/* {!loaded && (
-        <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-10 flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-white/50 animate-pulse" />
-          <p className="font-body text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white/50">
-            Loading video...
-          </p>
-        </div>
-      )} */}
-
+     
       <div className="absolute inset-0 overflow-hidden">
         <video
           ref={videoRef}
@@ -588,7 +580,7 @@ const VideoHero = () => {
           <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z" />
         </svg>
         <span className="font-body text-[10px] sm:text-xs uppercase tracking-[0.15em] whitespace-nowrap">
-          Watch on YouTube
+          Watch Video
         </span>
       </a>
     </div>
