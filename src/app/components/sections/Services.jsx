@@ -115,19 +115,19 @@ const Services = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-col sm:gap-6">
+      <div className="grid grid-cols-1 gap-4 place-items-center sm:flex sm:flex-col sm:gap-6">
         {services.map((service) => (
           <div
             key={service.title}
-            className={`service-card relative py-6 sm:py-16 md:py-20 border-b border-black/6 sm:last:border-b-0 ${service.offset}`}
+            className={`service-card relative py-6 sm:py-16 md:py-20 border-b border-black/6 sm:last:border-b-0 w-full flex flex-col items-center sm:block ${service.offset}`}
           >
             <h3
-              className={`service-title font-display text-[clamp(1.1rem,4.5vw,3.5rem)] uppercase leading-[0.95] tracking-tight text-black text-left ${service.titleAlign}`}
+              className={`service-title font-display text-[clamp(1.1rem,4.5vw,3.5rem)] uppercase leading-[0.95] tracking-tight text-black text-center ${service.titleAlign}`}
             >
               {service.title}
             </h3>
             <p
-              className={`service-desc font-body mt-2 sm:mt-6 text-xs sm:text-base leading-relaxed text-black/50 text-left ${service.descAlign}`}
+              className={`service-desc font-body mt-2 sm:mt-6 text-xs sm:text-base leading-relaxed text-black/50 text-center max-w-xs mx-auto sm:mx-0 sm:max-w-none ${service.descAlign}`}
             >
               {service.description}
             </p>

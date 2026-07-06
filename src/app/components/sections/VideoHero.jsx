@@ -216,6 +216,17 @@ const loadYouTubeApi = () => {
   return ytApiPromise;
 };
 
+// Shared fill style for both the local <video> and the YT player container.
+// Uses dvh/dvw (dynamic viewport units) consistently on both axes so the
+// cover-fill math doesn't fight itself as mobile browser chrome shows/hides.
+const FILL_STYLE = {
+  width: "100dvw",
+  height: "56.25dvw",
+  minHeight: "100dvh",
+  minWidth: "177.78dvh",
+  objectFit: "cover",
+};
+
 const VideoHero = () => {
   const [videos, setVideos] = useState(FALLBACK_VIDEOS);
   const [loading, setLoading] = useState(true);
@@ -304,6 +315,15 @@ const VideoHero = () => {
       if (!YT || destroyed || !ytContainerRef.current) return;
 
       ytPlayerRef.current = new YT.Player(ytContainerRef.current, {
+        // IMPORTANT: without explicit width/height, YouTube defaults the
+        // actual iframe to 640x390px and your CSS then stretches that tiny
+        // source up to fill the viewport — that's what was causing the
+        // blur/pixelation, especially on mobile where the cover-fill math
+        // forces a very large min-width. Sizing to 100%/100% here lets the
+        // iframe render at the container's real pixel size so YouTube
+        // serves an appropriately high-res stream instead.
+        width: "100%",
+        height: "100%",
         playerVars: {
           autoplay: 1,
           mute: 1,
@@ -317,6 +337,10 @@ const VideoHero = () => {
         events: {
           onReady: (e) => {
             e.target.mute();
+            // Nudge quality up; YouTube still auto-selects based on
+            // connection/iframe size, but this hints it not to downgrade
+            // further than necessary on mobile connections.
+            e.target.setPlaybackQuality?.("hd1080");
             setPlayerReady(true);
             const active = videosRef.current[currentRef.current];
             if (active?.type === "youtube") {
@@ -335,6 +359,8 @@ const VideoHero = () => {
             } else if (e.data === state.PAUSED) {
               // Ambient background video — never let it just sit paused.
               e.target.playVideo();
+            } else if (e.data === state.PLAYING) {
+              e.target.setPlaybackQuality?.("hd1080");
             }
           },
         },
@@ -413,25 +439,20 @@ const VideoHero = () => {
           playsInline
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-0 pointer-events-none"
           style={{
-            width: "100vw",
-            height: "56.25vw",
-            minHeight: "100svh",
-            minWidth: "177.78svh",
-            objectFit: "cover",
+            ...FILL_STYLE,
             opacity: active.type === "local" ? 1 : 0,
             zIndex: active.type === "local" ? 1 : 0,
           }}
         />
 
-        {/* Persistent YT player target: never remounted, only loadVideoById()'d */}
+        {/* Persistent YT player target: never remounted, only loadVideoById()'d.
+            No extra CSS scale on mobile (where the cover-fill math is already
+            most extreme); zoom is introduced gradually at larger breakpoints. */}
         <div
           ref={ytContainerRef}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-[1.18] sm:scale-[1.22] md:scale-[1.25]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none scale-100 sm:scale-[1.18] md:scale-[1.22] lg:scale-[1.25]"
           style={{
-            width: "100vw",
-            height: "56.25vw",
-            minHeight: "100svh",
-            minWidth: "177.78svh",
+            ...FILL_STYLE,
             opacity: active.type === "youtube" ? 1 : 0,
             zIndex: active.type === "youtube" ? 1 : 0,
           }}

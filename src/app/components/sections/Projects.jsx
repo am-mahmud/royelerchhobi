@@ -137,21 +137,21 @@ const Projects = () => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-col sm:gap-20 md:gap-40">
+      <div className="grid grid-cols-1 gap-10 place-items-center sm:flex sm:flex-col sm:gap-20 md:gap-40">
         {projects.map((project, i) => {
           const isReversed = i % 2 === 1;
 
           return (
             <article
               key={project.title}
-              className={`project-item grid grid-cols-1 gap-3 sm:gap-8 lg:gap-20 items-center ${
+              className={`project-item grid grid-cols-1 gap-3 sm:gap-8 lg:gap-20 items-center justify-items-center text-center lg:justify-items-stretch lg:text-left w-full ${
                 isReversed
                   ? "lg:grid-cols-[0.9fr_1.1fr]"
                   : "lg:grid-cols-[1.1fr_0.9fr]"
               }`}
             >
               <div
-                className={`project-image relative flex items-center justify-center min-h-32 sm:min-h-90 md:min-h-115 order-1 ${
+                className={`project-image relative flex items-center justify-center min-h-32 sm:min-h-90 md:min-h-115 order-1 w-full ${
                   isReversed ? "lg:order-1" : "lg:order-2"
                 }`}
               >
@@ -161,18 +161,18 @@ const Projects = () => {
                     alt={project.alt}
                     fill
                     className="object-contain"
-                    sizes="(max-width: 768px) 50vw, 50vw"
+                    sizes="(max-width: 768px) 90vw, 50vw"
                     priority={i === 0}
                   />
                 </div>
               </div>
 
               <div
-                className={`project-content flex flex-col gap-1.5 sm:gap-6 order-2 ${
+                className={`project-content flex flex-col items-center lg:items-start gap-1.5 sm:gap-6 order-2 ${
                   isReversed ? "lg:order-2" : "lg:order-1"
                 }`}
               >
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-body text-[9px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.3em] text-black/40 font-bold">
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 font-body text-[9px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.3em] text-black/40 font-bold">
                   <span>{project.year}</span>
                   <span className="hidden sm:inline text-black/20">/</span>
                   <span>{project.category}</span>
