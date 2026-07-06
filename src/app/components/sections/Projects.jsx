@@ -137,58 +137,54 @@ const Projects = () => {
         </h2>
       </div>
 
-      <div className="flex flex-col gap-20 sm:gap-28 md:gap-40">
+      <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-col sm:gap-20 md:gap-40">
         {projects.map((project, i) => {
           const isReversed = i % 2 === 1;
 
           return (
             <article
               key={project.title}
-              className={`project-item grid grid-cols-1 gap-8 sm:gap-10 lg:gap-20 items-center ${
+              className={`project-item grid grid-cols-1 gap-3 sm:gap-8 lg:gap-20 items-center ${
                 isReversed
                   ? "lg:grid-cols-[0.9fr_1.1fr]"
                   : "lg:grid-cols-[1.1fr_0.9fr]"
               }`}
             >
               <div
-                className={`project-content flex flex-col gap-5 sm:gap-6 ${
-                  isReversed ? "lg:order-2" : "lg:order-1"
-                }`}
-              >
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-body text-[10px] sm:text-[11px] uppercase tracking-[0.3em] text-black/40 font-bold">
-                  <span>{project.year}</span>
-                  <span className="hidden sm:inline text-black/20">/</span>
-                  <span>{project.category}</span>
-                </div>
-
-                <h3 className="font-display text-[clamp(2rem,5vw,4rem)] uppercase leading-[0.92] tracking-tight text-black">
-                  {project.title}
-                </h3>
-
-                <p className="font-body text-sm sm:text-base md:text-lg leading-relaxed text-black/55 max-w-lg">
-                  {project.description}
-                </p>
-
-                {/* <p className="font-body text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-black/35 font-bold">
-                  {project.disciplines.join(" · ")}
-                </p> */}
-              </div>
-
-              <div
-                className={`project-image relative flex items-center justify-center min-h-65 sm:min-h-90 md:min-h-115 ${
+                className={`project-image relative flex items-center justify-center min-h-32 sm:min-h-90 md:min-h-115 order-1 ${
                   isReversed ? "lg:order-1" : "lg:order-2"
                 }`}
               >
-                <div className="relative w-full h-65 sm:h-90 md:h-115">
+                <div className="relative w-full h-32 sm:h-90 md:h-115">
                   <Image
                     src={project.image}
                     alt={project.alt}
                     fill
                     className="object-contain"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 50vw, 50vw"
                     priority={i === 0}
                   />
                 </div>
+              </div>
+
+              <div
+                className={`project-content flex flex-col gap-1.5 sm:gap-6 order-2 ${
+                  isReversed ? "lg:order-2" : "lg:order-1"
+                }`}
+              >
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-body text-[9px] sm:text-[11px] uppercase tracking-[0.2em] sm:tracking-[0.3em] text-black/40 font-bold">
+                  <span>{project.year}</span>
+                  <span className="hidden sm:inline text-black/20">/</span>
+                  <span>{project.category}</span>
+                </div>
+
+                <h3 className="font-display text-[clamp(1rem,4vw,4rem)] uppercase leading-[0.95] tracking-tight text-black">
+                  {project.title}
+                </h3>
+
+                <p className="font-body text-xs sm:text-base md:text-lg leading-relaxed text-black/55 max-w-lg line-clamp-3 sm:line-clamp-none">
+                  {project.description}
+                </p>
               </div>
             </article>
           );

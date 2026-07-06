@@ -13,41 +13,41 @@ const services = [
     title: "Branding & Identity",
     description:
       "Logos, visual identity systems, typography, and brand guidelines a complete identity built to make your business unforgettable.",
-    titleAlign: "text-left",
-    descAlign: "text-left ml-0 max-w-md",
-    offset: "pl-0",
+    titleAlign: "sm:text-left",
+    descAlign: "sm:text-left sm:ml-0 sm:max-w-md",
+    offset: "sm:pl-0",
   },
   {
     title: "Web Design & Development",
     description:
       "Fast, modern websites from one-page brand sites to full custom builds designed to convert visitors into clients.",
-    titleAlign: "text-center",
-    descAlign: "text-center mx-auto max-w-lg",
-    offset: "px-4 sm:px-8",
+    titleAlign: "sm:text-center",
+    descAlign: "sm:text-center sm:mx-auto sm:max-w-lg",
+    offset: "sm:px-4 sm:sm:px-8",
   },
   {
     title: "Ad Creatives & Campaigns",
     description:
       "Static and dynamic ad campaigns, social strategy, and content calendars across every platform designed to stop the scroll.",
-    titleAlign: "text-right",
-    descAlign: "text-right ml-auto max-w-md",
-    offset: "pr-0",
+    titleAlign: "sm:text-right",
+    descAlign: "sm:text-right sm:ml-auto sm:max-w-md",
+    offset: "sm:pr-0",
   },
   {
     title: "Packaging Design",
     description:
       "Shelf-ready packaging that captures attention and tells your product's story at a glance.",
-    titleAlign: "text-left",
-    descAlign: "text-left max-w-sm",
-    offset: "pl-[8%] sm:pl-[14%] md:pl-[18%]",
+    titleAlign: "sm:text-left",
+    descAlign: "sm:text-left sm:max-w-sm",
+    offset: "sm:pl-[8%] md:pl-[14%] lg:pl-[18%]",
   },
   {
     title: "Film, Video & Photography",
     description:
       "TVC and OVC production alongside conceptual photo art visual storytelling from concept to final cut.",
-    titleAlign: "text-right",
-    descAlign: "text-right max-w-lg",
-    offset: "pr-[6%] sm:pr-[12%] md:pr-[22%] ml-auto",
+    titleAlign: "sm:text-right",
+    descAlign: "sm:text-right sm:max-w-lg",
+    offset: "sm:pr-[6%] md:pr-[12%] lg:pr-[22%] sm:ml-auto",
   },
 ];
 
@@ -113,25 +113,21 @@ const Services = () => {
         <h2 className="font-display text-[clamp(3rem,9vw,7.5rem)] uppercase leading-[0.88] tracking-tight text-black">
           Services
         </h2>
-        {/* <p className="font-body mt-6 sm:mt-8 text-sm sm:text-base md:text-lg leading-relaxed text-black/50 max-w-xl">
-          From a single logo mark to a full campaign rollout — we build the
-          language brands speak in, across every touchpoint.
-        </p> */}
       </div>
 
-      <div className="flex flex-col gap-4 sm:gap-6">
+      <div className="grid grid-cols-2 gap-4 sm:flex sm:flex-col sm:gap-6">
         {services.map((service) => (
           <div
             key={service.title}
-            className={`service-card relative py-14 sm:py-16 md:py-20 border-b border-black/6 last:border-b-0 ${service.offset}`}
+            className={`service-card relative py-6 sm:py-16 md:py-20 border-b border-black/6 sm:last:border-b-0 ${service.offset}`}
           >
             <h3
-              className={`service-title font-display text-[clamp(1.75rem,4.5vw,3.5rem)] uppercase leading-[0.92] tracking-tight text-black ${service.titleAlign}`}
+              className={`service-title font-display text-[clamp(1.1rem,4.5vw,3.5rem)] uppercase leading-[0.95] tracking-tight text-black text-left ${service.titleAlign}`}
             >
               {service.title}
             </h3>
             <p
-              className={`service-desc font-body mt-5 sm:mt-6 text-sm sm:text-base leading-relaxed text-black/50 ${service.descAlign}`}
+              className={`service-desc font-body mt-2 sm:mt-6 text-xs sm:text-base leading-relaxed text-black/50 text-left ${service.descAlign}`}
             >
               {service.description}
             </p>
