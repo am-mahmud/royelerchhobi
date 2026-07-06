@@ -92,7 +92,7 @@ const Brands = () => {
       className="overflow-hidden bg-white py-20 sm:py-28 md:py-32"
     >
       <div className="px-4 sm:px-6 md:px-16 lg:px-20 mb-12 sm:mb-16">
-        <h2 className="brands-title font-display text-[clamp(3rem,9vw,7.5rem)] uppercase leading-[0.88] tracking-tight text-black">
+        <h2 className="brands-title font-display text-[clamp(2rem,5.5vw,4.5rem)] uppercase leading-[0.88] tracking-tight text-black">
           We work with
         </h2>
       </div>

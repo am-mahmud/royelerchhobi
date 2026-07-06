@@ -56,7 +56,7 @@ const Navbar = () => {
             <a
               key={item.id}
               href={item.link}
-              className="nav-item font-body text-accent hover:opacity-70 transition-opacity text-xs lg:text-sm uppercase tracking-[0.18em]"
+              className="nav-item font-body text-black hover:opacity-70 transition-opacity text-xs lg:text-sm uppercase tracking-[0.18em]"
             >
               {item.title}
             </a>
@@ -64,23 +64,25 @@ const Navbar = () => {
         </nav>
 
         <button
+          type="button"
           onClick={toggleMenu}
-          className="nav-item md:hidden flex flex-col gap-1.5 focus:outline-none"
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
+          className="nav-item relative z-50 flex md:hidden h-10 w-10 shrink-0 flex-col items-center justify-center gap-1.5 opacity-100 focus:outline-none"
         >
           <span
-            className={`w-6 h-0.5 bg-accent transition-transform duration-300 ${
-              isOpen ? "rotate-45 translate-y-2" : ""
+            className={`block h-0.5 w-6 bg-accent transition-transform duration-300 ${
+              isOpen ? "translate-y-2 rotate-45" : ""
             }`}
           />
           <span
-            className={`w-6 h-0.5 bg-accent transition-opacity duration-300 ${
-              isOpen ? "opacity-0" : ""
+            className={`block h-0.5 w-6 bg-accent transition-opacity duration-300 ${
+              isOpen ? "opacity-0" : "opacity-100"
             }`}
           />
           <span
-            className={`w-6 h-0.5 bg-accent transition-transform duration-300 ${
-              isOpen ? "-rotate-45 -translate-y-2" : ""
+            className={`block h-0.5 w-6 bg-accent transition-transform duration-300 ${
+              isOpen ? "-translate-y-2 -rotate-45" : ""
             }`}
           />
         </button>
@@ -94,7 +96,7 @@ const Navbar = () => {
                 key={item.id}
                 href={item.link}
                 onClick={closeMenu}
-                className="text-accent hover:opacity-70 transition-opacity font-body text-sm uppercase tracking-[0.15em] font-bold py-2"
+                className="text-black hover:opacity-70 transition-opacity font-body text-sm uppercase tracking-[0.15em] py-2"
               >
                 {item.title}
               </a>

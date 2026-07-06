@@ -111,24 +111,24 @@ const Services = () => {
       className="bg-white px-4 sm:px-6 py-20 sm:py-28 md:px-16 lg:px-20 md:py-36"
     >
       <div className="services-intro mb-10 sm:mb-12 md:mb-16 max-w-4xl">
-        <h2 className="font-display text-[clamp(3rem,9vw,7.5rem)] uppercase leading-[0.88] tracking-tight text-black">
+        <h2 className="font-display text-[clamp(2rem,5.5vw,4.5rem)] uppercase leading-[0.88] tracking-tight text-black">
           Services
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 place-items-center sm:flex sm:flex-col sm:gap-6">
+      <div className="flex flex-col gap-4 sm:gap-6">
         {services.map((service) => (
           <div
             key={service.title}
-            className={`service-card relative py-6 sm:py-16 md:py-20 border-b border-black/6 sm:last:border-b-0 w-full flex flex-col items-center sm:block ${service.offset}`}
+            className={`service-card relative py-6 sm:py-16 md:py-20 border-b border-black/6 last:border-b-0 w-full flex flex-col items-center sm:block ${service.offset}`}
           >
             <h3
-              className={`service-title font-display text-[clamp(1.75rem,4.5vw,3.5rem)] uppercase leading-[0.95] tracking-tight text-black text-center ${service.titleAlign}`}
+              className={`service-title font-display text-[clamp(1.25rem,4vw,4rem)] uppercase leading-[0.95] tracking-tight text-black text-center ${service.titleAlign}`}
             >
               {service.title}
             </h3>
             <p
-              className={`service-desc font-body mt-2 sm:mt-6 text-sm sm:text-lg md:text-xl leading-relaxed text-black/50 text-center max-w-xs mx-auto sm:mx-0 sm:max-w-none ${service.descAlign}`}
+              className={`service-desc font-body mt-2 sm:mt-6 text-base sm:text-lg md:text-xl leading-relaxed text-black/50 text-center max-w-xs mx-auto sm:mx-0 sm:max-w-none ${service.descAlign}`}
             >
               {service.description}
             </p>

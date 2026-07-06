@@ -109,6 +109,7 @@ const About = () => {
     <section
       id="about"
       ref={sectionRef}
+      aria-label="About Us"
       className="px-6 sm:px-10 py-14 sm:py-16 md:px-20 md:py-20 bg-white"
     >
       <div className="about-intro grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20 mb-14 sm:mb-16 md:mb-20 pb-14 sm:pb-16">
@@ -119,13 +120,13 @@ const About = () => {
         </div>
 
         <div className="flex flex-col justify-end gap-6">
-          <p className="font-body text-sm sm:text-base md:text-lg leading-relaxed text-black/55">
+          <p className="font-body text-base sm:text-base md:text-lg leading-relaxed text-black/55">
             We don&apos;t just design for brands we build the language they
             speak in. From a single logo mark to a full campaign rollout, every
             project starts with one question: what does this brand want people
             to feel?
           </p>
-          <p className="font-body text-sm sm:text-base leading-relaxed text-black/40">
+          <p className="font-body text-base sm:text-base leading-relaxed text-black/40">
             Founded in Dhaka by Mominur Rahman Royal a designer and art
             thinker who believes restraint isn&apos;t a limitation, it&apos;s the
             whole point. Small team. Sharp ideas. Work that earns its place.
@@ -133,7 +134,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-16 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 lg:gap-16">
+      <div className="grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:gap-16">
         {team.map((member) => (
           <div key={member.name} className="team-member group">
             <div className="team-photo-wrap relative mb-6 sm:mb-8 flex items-end justify-center min-h-75 sm:min-h-95 md:min-h-105">
