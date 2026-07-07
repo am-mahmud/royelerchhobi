@@ -547,16 +547,16 @@ const VideoHero = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Watch on YouTube"
-        className="hero-dot absolute bottom-4 left-4 sm:bottom-6 sm:left-6 z-20 flex items-center gap-1.5 sm:gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 text-white transition-colors duration-300 hover:bg-white/20"
+        className="hero-dot absolute bottom-4 left-4 sm:bottom-4 sm:left-6 z-20 flex items-center gap-1.5 sm:gap-2 rounded-full border border-white/30 bg-white/10 backdrop-blur-md px-3 py-1.5 sm:px-2.5 sm:py-1 text-white transition-colors duration-300 hover:bg-white/20"
       >
         <svg
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0"
+          className="w-3.5 h-3.5 sm:w-2 sm:h-2 shrink-0"
         >
           <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12l-6.2 3.6Z" />
         </svg>
-        <span className="font-body text-[10px] sm:text-xs uppercase tracking-[0.15em] whitespace-nowrap">
+        <span className="font-body text-[8px] md:text-[10px] sm:text-xs uppercase tracking-[0.15em] whitespace-nowrap">
           Watch Video
         </span>
       </a>
