@@ -165,9 +165,7 @@
 
 // export default VideoHero;
 
-
-
-// Hero Two 
+// Hero Two
 
 "use client";
 
@@ -483,8 +481,6 @@
 
 // export default VideoHero;
 
-
-
 "use client";
 
 import { useRef, useState, useEffect } from "react";
@@ -492,16 +488,6 @@ import gsap from "gsap";
 import { useMountReveal } from "@/app/hooks/useGsapAnimations";
 
 const VIDEO_SRC = "/assest/royal-hero-video.mp4";
-
-// Shared fill style — cover the viewport on both axes using dynamic
-// viewport units so it doesn't fight mobile browser chrome show/hide.
-const FILL_STYLE = {
-  width: "100dvw",
-  height: "56.25dvw",
-  minHeight: "100dvh",
-  minWidth: "177.78dvh",
-  objectFit: "cover",
-};
 
 const VideoHero = () => {
   const heroRef = useRef(null);
@@ -520,17 +506,12 @@ const VideoHero = () => {
       video.play().catch(() => {});
     };
 
-    // If the video is already cached/ready by the time this effect runs
-    // (e.g. back-forward navigation), fire immediately instead of waiting
-    // for an event that already happened.
     if (video.readyState >= 3) {
       handleCanPlay();
     } else {
       video.addEventListener("canplaythrough", handleCanPlay, { once: true });
     }
 
-    // Force-resume if the browser pauses ambient background video after
-    // a backgrounded tab/app regains visibility.
     const onVisibilityChange = () => {
       if (document.visibilityState === "visible") {
         video.play().catch(() => {});
@@ -547,23 +528,19 @@ const VideoHero = () => {
   return (
     <div
       ref={heroRef}
-      className="relative h-[60svh] min-h-80 sm:h-svh sm:min-h-120 w-full overflow-hidden bg-black"
+      className="relative aspect-video sm:aspect-auto sm:h-150 md:w-full overflow-hidden"
     >
-     
-      <div className="absolute inset-0 overflow-hidden">
-        <video
-          ref={videoRef}
-          src={VIDEO_SRC}
-          fetchPriority="high"
-          muted
-          loop
-          playsInline
-          autoPlay
-          preload="auto"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-0 pointer-events-none opacity-0"
-          style={FILL_STYLE}
-        />
-      </div>
+      <video
+        ref={videoRef}
+        src={VIDEO_SRC}
+        fetchPriority="high"
+        muted
+        loop
+        playsInline
+        autoPlay
+        preload="auto"
+        className="absolute inset-0 w-full h-full object-cover border-0 pointer-events-none opacity-0"
+      />
 
       <a
         href="https://www.youtube.com/@RoyalerchhobiCommunications"
@@ -588,4 +565,3 @@ const VideoHero = () => {
 };
 
 export default VideoHero;
-
