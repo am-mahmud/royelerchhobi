@@ -528,7 +528,7 @@ const VideoHero = () => {
   return (
     <div
       ref={heroRef}
-      className="relative aspect-video sm:aspect-auto sm:h-150 md:w-full overflow-hidden"
+      className="relative aspect-video md:w-full max-h-[800px] mx-auto overflow-hidden"
     >
       <video
         ref={videoRef}
